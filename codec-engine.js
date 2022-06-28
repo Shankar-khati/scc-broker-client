@@ -1,5 +1,5 @@
 /* eslint-disable no-bitwise */
-import lzString from 'lz-string';
+const lzString = require('lz-string');
 
 const base64Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 const validJSONStartRegex = /^[ \n\r\t]*[{\\[]/;
