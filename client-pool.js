@@ -1,5 +1,5 @@
 const url = require('url');
-const CodecEngine = require('../engine/codec-engine');
+const CodecEngine = require('./codec-engine');
 const socketClusterClient = require('socketcluster-client');
 const AsyncStreamEmitter = require('async-stream-emitter');
 const Hasher = require('./hasher');
