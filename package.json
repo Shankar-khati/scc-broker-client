@@ -9,10 +9,13 @@
   },
   "dependencies": {
     "async-stream-emitter": "^4.0.0",
-    "socketcluster-client": "^16.0.0",
-    "skeleton-rendezvous": "^1.1.2"
+    "lz-string": "^1.4.4",
+    "skeleton-rendezvous": "^1.1.2",
+    "socketcluster-client": "^16.0.4"
   },
   "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/socketcluster-client": "16.0.0",
     "mocha": "5.2.0"
   },
   "keywords": [

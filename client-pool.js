@@ -1,4 +1,5 @@
 const url = require('url');
+const CodecEngine = require('../engine/codec-engine');
 const socketClusterClient = require('socketcluster-client');
 const AsyncStreamEmitter = require('async-stream-emitter');
 const Hasher = require('./hasher');
@@ -18,6 +19,7 @@ function ClientPool(options) {
   clientConnectOptions.query = {
     authKey: this.authKey
   };
+  clientConnectOptions.codecEngine = CodecEngine;
 
   this._handleClientError = (event) => {
     this.emit('error', event);

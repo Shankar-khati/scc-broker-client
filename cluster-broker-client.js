@@ -13,6 +13,7 @@ function ClusterBrokerClient(broker, options) {
   this.authKey = options.authKey || null;
   this.mappingEngine = options.mappingEngine || 'skeletonRendezvous';
   this.clientPoolSize = options.clientPoolSize || 1;
+  this.codecEngine = options.codecEngine || null;
   this.isReady = false;
 
   if (this.mappingEngine === 'skeletonRendezvous') {
