@@ -4,7 +4,7 @@ import lzString from 'lz-string';
 const base64Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 const validJSONStartRegex = /^[ \n\r\t]*[{\\[]/;
 
-const arrayBufferToBase64 = (arraybuffer: ArrayBuffer) => {
+const arrayBufferToBase64 = (arraybuffer) => {
   const bytes = new Uint8Array(arraybuffer);
   const len = bytes.length;
   let base64 = '';
@@ -25,7 +25,7 @@ const arrayBufferToBase64 = (arraybuffer: ArrayBuffer) => {
   return base64;
 };
 
-const binaryToBase64Replacer = (_key: any, value: any) => {
+const binaryToBase64Replacer = (_key, value) => {
   if (global.ArrayBuffer && value instanceof global.ArrayBuffer) {
     return {
       base64: true,
@@ -60,7 +60,7 @@ const binaryToBase64Replacer = (_key: any, value: any) => {
 
 // Decode the data which was transmitted over the wire to a JavaScript Object in a format which SC understands.
 // See encode function below for more details.
-export const decode = (input: string) => {
+export const decode = (input) => {
   if (input == null) {
     return null;
   }
@@ -106,11 +106,11 @@ export const decode = (input: string) => {
 // See https://github.com/SocketCluster/socketcluster/blob/master/socketcluster-protocol.md
 // for details about the SC protocol.
 
-function shouldCompress(data: string) {
+function shouldCompress(data) {
   return data && Array.isArray(data) && data.length > 1000;
 }
 
-export const encode = (object: any) => {
+export const encode = (object) => {
   // Leave ping or pong message as is
   if (object === '#1' || object === '#2') {
     return object;
