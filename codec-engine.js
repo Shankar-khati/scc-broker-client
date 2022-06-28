@@ -60,7 +60,7 @@ const binaryToBase64Replacer = (_key, value) => {
 
 // Decode the data which was transmitted over the wire to a JavaScript Object in a format which SC understands.
 // See encode function below for more details.
-export const decode = (input) => {
+module.exports.decode = (input) => {
   if (input == null) {
     return null;
   }
@@ -110,7 +110,7 @@ function shouldCompress(data) {
   return data && Array.isArray(data) && data.length > 1000;
 }
 
-export const encode = (object) => {
+module.exports.encode = (object) => {
   // Leave ping or pong message as is
   if (object === '#1' || object === '#2') {
     return object;
